@@ -28,7 +28,16 @@ gem 'overcommit'
 gem 'rubocop', '0.48', require: false
 
 group :development, :test do
+  # Debug
   gem 'byebug', platforms: %i(mri mingw x64_mingw)
+  gem 'pry-rails'
+
+  # Tests
+  gem 'rspec-rails', '~> 3.6'
+end
+
+group :test do
+  gem 'simplecov', require: false
 end
 
 group :development do
