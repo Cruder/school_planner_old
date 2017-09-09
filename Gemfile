@@ -27,6 +27,9 @@ gem 'sqlite3'
 gem 'overcommit'
 gem 'rubocop', '0.48', require: false
 
+# Authentication
+gem 'devise_token_auth'
+
 group :development, :test do
   # Debug
   gem 'byebug', platforms: %i(mri mingw x64_mingw)
