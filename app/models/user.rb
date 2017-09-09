@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
   include DeviseTokenAuth::Concerns::User
+
+  # Relations
+  has_many :classrooms_users
+  has_many :classrooms, through: :classrooms_users
+  has_many :schools, through: :classrooms
 end
