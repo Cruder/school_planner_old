@@ -5,6 +5,7 @@ class Classroom < ActiveRecord::Base
   belongs_to :school, optional: true
   has_many :classrooms_users
   has_many :users, through: :classrooms_users
+  has_and_belongs_to_many :subjects
 
   # Validations
   validates :name, presence: true
