@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   has_many :classrooms_users
   has_many :classrooms, through: :classrooms_users
   has_many :schools, through: :classrooms
+  has_many :subjects, foreign_key: :teacher_id
 end
