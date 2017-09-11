@@ -10,7 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909173552) do
+ActiveRecord::Schema.define(version: 20170910171217) do
+
+  create_table "classrooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "year"
+    t.integer "school_id"
+    t.index ["school_id"], name: "index_classrooms_on_school_id"
+  end
+
+  create_table "classrooms_subjects", force: :cascade do |t|
+    t.integer "classroom_id"
+    t.integer "subject_id"
+    t.index ["classroom_id"], name: "index_classrooms_subjects_on_classroom_id"
+    t.index ["subject_id"], name: "index_classrooms_subjects_on_subject_id"
+  end
+
+  create_table "classrooms_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "classroom_id"
+    t.integer "as"
+    t.index ["classroom_id"], name: "index_classrooms_users_on_classroom_id"
+    t.index ["user_id"], name: "index_classrooms_users_on_user_id"
+  end
+
+  create_table "homeworks", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "deadline"
+    t.integer "subject_id"
+    t.integer "classroom_id"
+    t.integer "created_by_id"
+    t.integer "edited_by_id"
+    t.index ["classroom_id"], name: "index_homeworks_on_classroom_id"
+    t.index ["created_by_id"], name: "index_homeworks_on_created_by_id"
+    t.index ["edited_by_id"], name: "index_homeworks_on_edited_by_id"
+    t.index ["subject_id"], name: "index_homeworks_on_subject_id"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "title"
+    t.string "color"
+    t.integer "teacher_id"
+    t.index ["teacher_id"], name: "index_subjects_on_teacher_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false

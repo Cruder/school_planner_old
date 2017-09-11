@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   has_many :classrooms, through: :classrooms_users
   has_many :schools, through: :classrooms
   has_many :subjects, foreign_key: :teacher_id
+  has_many :homeworks_users
+  has_many :homework, through: :homeworks_users
 end
