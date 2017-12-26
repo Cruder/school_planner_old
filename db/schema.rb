@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909173552) do
+ActiveRecord::Schema.define(version: 20171031155951) do
+
+  create_table "classrooms", force: :cascade do |t|
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.integer "profile_id"
+    t.integer "classroom_id"
+    t.index ["classroom_id"], name: "index_memberships_on_classroom_id"
+    t.index ["profile_id"], name: "index_memberships_on_profile_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "type"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false

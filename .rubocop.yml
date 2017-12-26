@@ -11,3 +11,6 @@ AllCops:
     - 'Vagrantfile'
 Metrics/MethodLength:
   Max: 15
+
+Documentation:
+  Enabled: false
