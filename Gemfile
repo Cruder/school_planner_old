@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -25,14 +27,14 @@ gem 'sqlite3'
 
 # Linter
 gem 'overcommit'
-gem 'rubocop', '0.48', require: false
+gem 'rubocop', '0.52', require: false
 
 # Authentication
 gem 'devise_token_auth'
 
 group :development, :test do
   # Debug
-  gem 'byebug', platforms: %i(mri mingw x64_mingw)
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails'
 
   # Tests
@@ -52,4 +54,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
