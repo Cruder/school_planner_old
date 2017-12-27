@@ -27,7 +27,7 @@ gem 'sqlite3'
 
 # Linter
 gem 'overcommit'
-gem 'rubocop', '0.50', require: false
+gem 'rubocop', '0.52', require: false
 
 # Authentication
 gem 'devise_token_auth'
@@ -55,5 +55,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem 'devise'
