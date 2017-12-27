@@ -12,6 +12,11 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.1'
 gem 'sqlite3'
 
+################################# TRAILBLAZER ##################################
+gem 'trailblazer', '>= 2.0.3'
+gem 'trailblazer-generator'
+gem 'trailblazer-rails'
+
 #################################### DEPLOY ####################################
 # gem 'capistrano-rails', group: :development
 gem 'overcommit'
