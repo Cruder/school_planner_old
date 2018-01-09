@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-class ProfilesController < ApplicationController
+class ClassroomsController < ApplicationController
   def index
-    run Profile::Index
+    run Classroom::Index
 
     render json: result['model']
   end
 
   def show
-    run Profile::Show
+    run Classroom::Show
 
     render json: result['model']
   end
 
   def create
-    run Profile::Create
+    run Classroom::Create
 
     if result.success?
       render json: result['model']
@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    run Profile::Update
+    run Classroom::Update
 
     if result.success?
       render json: result['model']
@@ -34,7 +34,7 @@ class ProfilesController < ApplicationController
   end
 
   def delete
-    run Profile::Delete
+    run Classroom::Delete
 
     if result.success?
       head :none
